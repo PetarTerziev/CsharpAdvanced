@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheV-Logger", "TheV-Logger\TheV-Logger.csproj", "{28D1C66A-8DCB-412D-9232-61B3614EA97D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28D1C66A-8DCB-412D-9232-61B3614EA97D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28D1C66A-8DCB-412D-9232-61B3614EA97D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28D1C66A-8DCB-412D-9232-61B3614EA97D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28D1C66A-8DCB-412D-9232-61B3614EA97D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FDC35B8-33CD-46B1-A9BA-B622FDD6D6F3}
+	EndGlobalSection
+EndGlobal
