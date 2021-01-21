@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindEvenOrOdds", "FindEvenOrOdds\FindEvenOrOdds.csproj", "{3EE3C5D7-5F6E-4112-9B79-9DA6E43C34A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EE3C5D7-5F6E-4112-9B79-9DA6E43C34A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EE3C5D7-5F6E-4112-9B79-9DA6E43C34A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EE3C5D7-5F6E-4112-9B79-9DA6E43C34A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EE3C5D7-5F6E-4112-9B79-9DA6E43C34A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5FE0C646-7529-4C47-940E-586F3119146B}
+	EndGlobalSection
+EndGlobal
