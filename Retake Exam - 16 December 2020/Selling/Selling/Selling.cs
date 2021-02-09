@@ -10,25 +10,24 @@ namespace Selling
         {
             int size = int.Parse(Console.ReadLine());
             string[,] store = ReadMatrix(size, size);
-            int[] startPos = GetStartPosition(store);
             bool isPlayerOut = false;
             int money = 0;
 
             while (money < 50 && !isPlayerOut)
             {
                 string direction = Console.ReadLine();
-                int oldRow = GetStartPosition(store)[0];
-                int oldCol = GetStartPosition(store)[1];
+                int oldRow = GetPosition(store, "S")[0];
+                int oldCol = GetPosition(store, "S")[1];
 
-                int[] newCoordinates = MovePlayer(store, direction);
-                int row = newCoordinates[0];
-                int col = newCoordinates[1];
+                int row = GetPlayerNewPosition(oldRow, oldCol, direction)[0];
+                int col = GetPlayerNewPosition(oldRow, oldCol, direction)[1];
+
+                store[oldRow, oldCol] = "-";
 
                 if (row < 0 || row >= store.GetLength(0) || 
                     col < 0 || col >= store.GetLength(1))
                 {
                     isPlayerOut = true;
-                    store[oldRow, oldCol] = "-";
                 }
                 else
                 {
@@ -36,23 +35,16 @@ namespace Selling
 
                     if (sign == "O")
                     {
-                        store[oldRow, oldCol] = "-";
                         store[row, col] = "-";
-                        int[] newCoordinatesPilar = GetPositionOfPilar(store);
-
-                        store[newCoordinatesPilar[0], newCoordinatesPilar[1]] = "S";
+                        store[GetPosition(store, "O")[0], GetPosition(store, "O")[1]] = "S";
+                        continue;
                     }
                     else if (sign != "-")
                     {
                         money += int.Parse(sign);
-                        store[oldRow, oldCol] = "-";
-                        store[row, col] = "S";
                     }
-                    else
-                    {
-                        store[oldRow, oldCol] = "-";
-                        store[row, col] = "S";
-                    }
+
+                    store[row, col] = "S";
                 }
             }
 
@@ -88,11 +80,8 @@ namespace Selling
             return matrix;
         }
 
-        static int[] MovePlayer(string [,] matrix , string direction)
+        static int[] GetPlayerNewPosition(int row, int col, string direction)
         {
-            int row = GetStartPosition(matrix)[0];
-            int col = GetStartPosition(matrix)[1];
-
             switch (direction)
             {
                 case "up":
@@ -113,14 +102,15 @@ namespace Selling
             return new int[2] { row, col };
         }
 
-        static int[] GetStartPosition(string[,] matrix)
+        static int[] GetPosition(string[,] matrix, string sign)
         {
             int[] result = new int[2];
+
             for (int row = 0; row < matrix.GetLength(0); row++)
             {
                 for (int col = 0; col < matrix.GetLength(1); col++)
                 {
-                    if (matrix[row, col] == "S")
+                    if (matrix[row, col] == sign)
                     {
                         result[0] = row;
                         result[1] = col;
@@ -130,25 +120,6 @@ namespace Selling
 
             return result;
         }
-
-        static int[] GetPositionOfPilar(string[,] matrix)
-        {
-            int[] result = new int[2];
-            for (int row = 0; row < matrix.GetLength(0); row++)
-            {
-                for (int col = 0; col < matrix.GetLength(1); col++)
-                {
-                    if (matrix[row, col] == "O")
-                    {
-                        result[0] = row;
-                        result[1] = col;
-                    }
-                }
-            }
-
-            return result;
-        }
-
         static void PrintMatrix(string[,] matrix)
         {
             for (int row = 0; row < matrix.GetLength(0); row++)
