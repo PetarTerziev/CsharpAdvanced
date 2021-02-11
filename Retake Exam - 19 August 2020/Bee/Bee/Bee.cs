@@ -39,9 +39,8 @@ namespace Bee
 
                         row = GetPlayerNewPosition(row, col, direction)[0];
                         col = GetPlayerNewPosition(row, col, direction)[1];
+                        sign = garden[row, col];
                     }
-
-                    sign = garden[row, col];
 
                     if (sign == "f")
                     {
